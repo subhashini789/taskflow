@@ -21,7 +21,7 @@ export default function TaskCard({ task, onEdit }: TaskCardProps) {
     zIndex: 999,
   } : undefined;
 
-  const isAdmin = user?.role === 'admin';
+  const isAdmin = ['admin', 'superadmin'].includes(user?.role || '');
   const isCreator = user?._id === task.creator?._id;
   const isAssignee = user?._id === task.assignee?._id;
   const isUnassigned = task.assignee === null;

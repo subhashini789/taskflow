@@ -25,7 +25,12 @@ export default function Register() {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={`glass-panel ${styles.form}`}>
-        <h1 className={styles.title}>Create Account</h1>
+        <div className={styles.brand}>TaskFlow</div>
+        <div>
+          <h1 className={styles.title}>Create Account</h1>
+          <p className={styles.subtitle}>Join us and organize your work</p>
+        </div>
+        
         {error && <div className={styles.error}>{error}</div>}
         <div className={styles.inputGroup}>
           <label>Name</label>

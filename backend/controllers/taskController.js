@@ -3,7 +3,7 @@ const Task = require('../models/Task');
 const getTasks = async (req, res) => {
   try {
     let tasks;
-    if (req.user.role === 'admin') {
+    if (['admin', 'superadmin'].includes(req.user.role)) {
       tasks = await Task.find({}).populate('creator assignee', 'name email');
     } else {
       // Normal user can see tasks assigned to them or tasks created by them
@@ -28,7 +28,7 @@ const createTask = async (req, res) => {
 
     // Normal users can only assign unassigned tasks to themselves during creation
     // But since this is creation, it's either assigned to themselves or unassigned.
-    if (req.user.role !== 'admin') {
+    if (!['admin', 'superadmin'].includes(req.user.role)) {
       if (assignee && assignee !== req.user.id) {
         return res.status(403).json({ message: 'You can only assign tasks to yourself' });
       }
@@ -61,7 +61,7 @@ const updateTask = async (req, res) => {
       return res.status(404).json({ message: 'Task not found' });
     }
 
-    if (req.user.role === 'admin') {
+    if (['admin', 'superadmin'].includes(req.user.role)) {
       // Admin can update anything
       task.title = title !== undefined ? title : task.title;
       task.description = description !== undefined ? description : task.description;
@@ -114,7 +114,7 @@ const deleteTask = async (req, res) => {
       return res.status(404).json({ message: 'Task not found' });
     }
 
-    if (req.user.role === 'admin' || task.creator.toString() === req.user.id) {
+    if (['admin', 'superadmin'].includes(req.user.role) || task.creator.toString() === req.user.id) {
       await task.deleteOne();
       res.json({ message: 'Task removed' });
     } else {

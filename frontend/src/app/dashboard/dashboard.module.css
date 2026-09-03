@@ -23,9 +23,9 @@
 }
 
 .toggleBtn {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  color: white;
+  color: var(--text-main);
   padding: 10px 16px;
   border-radius: 8px;
   font-weight: 600;
@@ -34,5 +34,5 @@
 }
 
 .toggleBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(139, 92, 246, 0.15);
 }

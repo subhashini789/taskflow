@@ -21,7 +21,7 @@ export default function CreateTaskModal({ isOpen, onClose, onSaved, taskToEdit, 
   const [reminderAt, setReminderAt] = useState<string>('');
   
   const [users, setUsers] = useState<User[]>([]);
-  const isAdmin = currentUser?.role === 'admin';
+  const isAdmin = ['admin', 'superadmin'].includes(currentUser?.role || '');
 
   useEffect(() => {
     if (isOpen) {

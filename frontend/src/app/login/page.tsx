@@ -24,7 +24,12 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={`glass-panel ${styles.form}`}>
-        <h1 className={styles.title}>Welcome Back</h1>
+        <div className={styles.brand}>TaskFlow</div>
+        <div>
+          <h1 className={styles.title}>Welcome Back</h1>
+          <p className={styles.subtitle}>Sign in to manage your projects</p>
+        </div>
+        
         {error && <div className={styles.error}>{error}</div>}
         <div className={styles.inputGroup}>
           <label>Email</label>

@@ -101,9 +101,9 @@
 }
 
 .editBtn {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  color: white;
+  color: var(--text-main);
   border-radius: 4px;
   padding: 2px 8px;
   font-size: 12px;
@@ -112,5 +112,5 @@
 }
 
 .editBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(139, 92, 246, 0.15);
 }

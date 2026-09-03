@@ -16,6 +16,13 @@ export default function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
   const [view, setView] = useState<'board' | 'stats'>('board');
+  const [currentTime, setCurrentTime] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setCurrentTime(new Date());
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const fetchTasks = async () => {
     try {
@@ -38,7 +45,7 @@ export default function Dashboard() {
   useEffect(() => {
     if (user) {
       fetchTasks();
-      if (user.role === 'admin') {
+      if (['admin', 'superadmin'].includes(user.role)) {
         fetchUsers();
       }
     }
@@ -76,19 +83,22 @@ export default function Dashboard() {
       <header className={styles.header}>
         <div>
           <h1 className={styles.title}>
-            {user.role === 'admin' ? 'Admin Dashboard' : 'Project Board'}
+            {['admin', 'superadmin'].includes(user.role) ? 'Admin Dashboard' : 'Project Board'}
           </h1>
           <p className={styles.subtitle}>
-            {user.role === 'admin'
+            {['admin', 'superadmin'].includes(user.role)
               ? 'Overview and manage all tasks across the entire system.'
               : 'Manage your tasks and keep track of progress.'}
           </p>
-          <div style={{ marginTop: '8px', fontSize: '14px', color: 'var(--primary)', fontWeight: '500' }}>
-            📅 {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+          <div style={{ marginTop: '12px', fontSize: '14px', color: 'var(--primary)', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <span>📅 {currentTime ? currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) : '...'}</span>
+            <span style={{ padding: '6px 14px', background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: '20px', fontWeight: 'bold', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', letterSpacing: '1px' }}>
+              ⏰ {currentTime ? currentTime.toLocaleTimeString('en-US') : '...'}
+            </span>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '12px' }}>
-          {user.role === 'admin' && (
+          {['admin', 'superadmin'].includes(user.role) && (
             <button
               className={styles.toggleBtn}
               onClick={() => setView(view === 'board' ? 'stats' : 'board')}
@@ -114,8 +124,8 @@ export default function Dashboard() {
         total={tasks.length}
       />
 
-      {user.role === 'admin' && view === 'stats' ? (
-        <AdminStats tasks={tasks} users={users} />
+      {['admin', 'superadmin'].includes(user.role) && view === 'stats' ? (
+        <AdminStats tasks={tasks} users={users} onUserUpdated={fetchUsers} currentUser={user} />
       ) : (
         <Board
           initialTasks={tasks}
