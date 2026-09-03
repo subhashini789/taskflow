@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth, User } from '@/context/AuthContext';
 import api from '@/utils/api';
 import Board from '@/components/Board';
 import CreateTaskModal from '@/components/CreateTaskModal';

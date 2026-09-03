@@ -134,7 +134,7 @@ export default function CreateTaskModal({ isOpen, onClose, onSaved, taskToEdit, 
                   value={assignee} 
                   onChange={(e) => setAssignee(e.target.value)} 
                   className="input-field"
-                  disabled={taskToEdit && taskToEdit.assignee !== null && taskToEdit.assignee._id !== currentUser?._id}
+                  disabled={!!(taskToEdit && taskToEdit.assignee !== null && taskToEdit.assignee._id !== currentUser?._id)}
                 >
                   <option value="">Unassigned</option>
                   <option value={currentUser?._id}>Assign to Me</option>
