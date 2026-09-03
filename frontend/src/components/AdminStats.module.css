@@ -1,0 +1,72 @@
+.container {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.email {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.badge {
+  background: rgba(139, 92, 246, 0.1);
+  color: #c4b5fd;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.success {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.unassignedRow {
+  background: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 16px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 16px;
+}
+
+.ringWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentText {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.goalText {
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.messageText {
+  font-size: 14px;
+  color: var(--text-muted);
+}
