@@ -36,3 +36,19 @@
 .toggleBtn:hover {
   background: rgba(139, 92, 246, 0.15);
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .header > div:last-child {
+    width: 100%;
+  }
+
+  .header button {
+    flex: 1;
+  }
+}

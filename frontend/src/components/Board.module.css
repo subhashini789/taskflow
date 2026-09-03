@@ -114,3 +114,14 @@
 .editBtn:hover {
   background: rgba(139, 92, 246, 0.15);
 }
+
+@media (max-width: 768px) {
+  .boardContainer {
+    gap: 16px;
+    padding: 12px 0;
+  }
+  
+  .column {
+    min-width: 85vw;
+  }
+}

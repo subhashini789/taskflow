@@ -75,3 +75,17 @@
 .cancelBtn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 24px 20px;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+}

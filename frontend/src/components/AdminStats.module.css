@@ -104,3 +104,24 @@
   background: rgba(239, 68, 68, 0.2);
   transform: translateY(-1px);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px 12px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+  
+  .name {
+    font-size: 14px;
+  }
+  
+  .promoteBtn, .demoteBtn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
