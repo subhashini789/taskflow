@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+
 export default function Home() {
-  return null; // Redirect logic is handled in AuthContext
+  redirect('/login');
 }
