@@ -83,4 +83,32 @@ Both frontend and backend are ready to be deployed to modern cloud providers.
 3. Deploy!
 
 ## Screenshots
-*(Add screenshots of the Dashboard, Login page, and Task Creation Modal here)*
+Registration page
+<img width="1912" height="908" alt="image" src="https://github.com/user-attachments/assets/44d26a0b-1778-43f5-a317-a3aeae74b8b8" />
+         
+Login Page 
+<img width="1913" height="907" alt="image" src="https://github.com/user-attachments/assets/82d4113c-e577-49ee-9353-f9488e9deb83" />
+
+User Dashboard
+<img width="1908" height="908" alt="image" src="https://github.com/user-attachments/assets/17c8b53c-cdd5-47bc-9a44-17f99af75347" />
+
+Create new task
+<img width="1897" height="908" alt="image" src="https://github.com/user-attachments/assets/41ec3218-5b15-4361-a3b0-bbebb909025b" />
+
+Admin dashbords
+<img width="1911" height="903" alt="image" src="https://github.com/user-attachments/assets/bb4d13d7-a9e2-43a0-9a37-ca683b9bae01" />
+
+<img width="1907" height="907" alt="image" src="https://github.com/user-attachments/assets/3999d4a2-5660-4649-a68d-47ed8b62acf6" />
+
+
+Light Mode 
+<img width="1917" height="907" alt="image" src="https://github.com/user-attachments/assets/cd9a8f73-ab9b-4e03-9bff-5fe9721d8b74" />
+
+
+
+
+
+
+
+
+
