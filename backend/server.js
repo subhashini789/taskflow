@@ -21,17 +21,23 @@ mongoose.connect(process.env.MONGO_URI)
   const bcrypt = require('bcryptjs');
   
   try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash('superadmin123', salt);
+    
     const adminExists = await User.findOne({ email: 'superadmin@example.com' });
     if (!adminExists) {
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash('superadmin123', salt);
       await User.create({
         name: 'Super Admin',
         email: 'superadmin@example.com',
         password: hashedPassword,
         role: 'superadmin',
       });
-      console.log('Superadmin account automatically created for live database.');
+      console.log('Superadmin account created for live database.');
+    } else {
+      adminExists.password = hashedPassword;
+      adminExists.role = 'superadmin';
+      await adminExists.save();
+      console.log('Superadmin account updated for live database.');
     }
   } catch (err) {
     console.error('Error seeding superadmin:', err);
