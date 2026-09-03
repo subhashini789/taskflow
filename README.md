@@ -101,8 +101,13 @@ Admin dashbords
 <img width="1907" height="907" alt="image" src="https://github.com/user-attachments/assets/3999d4a2-5660-4649-a68d-47ed8b62acf6" />
 
 
+
 Light Mode 
 <img width="1917" height="907" alt="image" src="https://github.com/user-attachments/assets/cd9a8f73-ab9b-4e03-9bff-5fe9721d8b74" />
+
+Reminder Notification
+<img width="1906" height="912" alt="image" src="https://github.com/user-attachments/assets/12a002ae-ff0a-4e7b-92c5-7361d8559e24" />
+
 
 
 
